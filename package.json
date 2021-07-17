@@ -1,0 +1,18 @@
+{
+  "name": "squadlytics",
+  "version": "1.0.0",
+  "description": "Analyze who really knows how to play PUBG among friends.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pubg",
+    "analytics"
+  ],
+  "author": "Vinicius M. Longaray",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
