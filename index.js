@@ -50,7 +50,7 @@ function sec2time(timeInSeconds) {
     hours = Math.floor(time / 60 / 60),
     minutes = Math.floor(time / 60) % 60,
     seconds = Math.floor(time - minutes * 60),
-    milliseconds = time.slice(-3);
+    // milliseconds = time.slice(-3);
 
   return pad(hours, 2) + ":" + pad(minutes, 2) + ":" + pad(seconds, 2);
 }
@@ -64,7 +64,7 @@ async function print(matchesNumber, report) {
 
   console.table(report);
   console.log();
-  console.log("Analytics generated from", matchesNumber, "matches.");
+  console.log("Generated from", matchesNumber, "matches.");
   console.log(line);
 }
 
@@ -191,6 +191,8 @@ async function generateAnalytics(data) {
 /*                                Main function                               */
 /* -------------------------------------------------------------------------- */
 
+// This one is to generate analytics from the last 20 matches played by each
+// player and filter only those played together
 const main = async () => {
   // Get info from these players
   const names = ["Canalhabis", "N4M3-V1U", "OpaiTaON", "v1nns"];
