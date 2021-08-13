@@ -27,8 +27,8 @@ npm install
 node index.js
 ```
 
-**In order to get your own API key, it is necessary to create a developer
-account here: https://developer.pubg.com/*
+**To get your own API key, it is necessary to create a developer account here:
+https://developer.pubg.com/*
 
 ## Backlog
 
