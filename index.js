@@ -42,15 +42,16 @@ class Statistics {
 /*                               Util functions                               */
 /* -------------------------------------------------------------------------- */
 
+/* ------------------- Convert time in seconds to HH:MM:SS ------------------ */
 function sec2time(timeInSeconds) {
   var pad = function (num, size) {
-      return ("000" + num).slice(size * -1);
-    },
-    time = parseFloat(timeInSeconds).toFixed(3),
-    hours = Math.floor(time / 60 / 60),
-    minutes = Math.floor(time / 60) % 60,
-    seconds = Math.floor(time - minutes * 60),
-    // milliseconds = time.slice(-3);
+    return ("000" + num).slice(size * -1);
+  };
+  time = parseFloat(timeInSeconds).toFixed(3);
+  hours = Math.floor(time / 60 / 60);
+  minutes = Math.floor(time / 60) % 60;
+  seconds = Math.floor(time - minutes * 60);
+  // milliseconds = time.slice(-3);
 
   return pad(hours, 2) + ":" + pad(minutes, 2) + ":" + pad(seconds, 2);
 }
@@ -72,7 +73,7 @@ async function print(matchesNumber, report) {
 /*                                API Requests                                */
 /* -------------------------------------------------------------------------- */
 
-// Get account ID, player name and ID from last matches played
+/* ------- Get account ID, player name and ID from last matches played ------ */
 async function getPlayersInfo(names) {
   let players = [];
   try {
@@ -106,9 +107,7 @@ async function getPlayersInfo(names) {
   return players;
 }
 
-/* -------------------------------------------------------------------------- */
-
-// Get match info including player stats
+/* ------------------ Get match info including player stats ----------------- */
 async function getMatchInfo(id, names) {
   // Organize stats by player
   let rawStatsByPlayer = new Object();
@@ -147,7 +146,6 @@ async function getMatchInfo(id, names) {
 /*                                  Analytics                                 */
 /* -------------------------------------------------------------------------- */
 
-// Analyze data
 async function generateAnalytics(data) {
   let statsByPlayer = new Object();
 
@@ -176,7 +174,7 @@ async function generateAnalytics(data) {
         (stats.avgTimeSurvived / matches).toFixed(3)
       );
 
-      // transform seconds to time
+      // transform seconds to time (string)
       stats.maxTimeSurvived = sec2time(stats.maxTimeSurvived);
       stats.avgTimeSurvived = sec2time(stats.avgTimeSurvived);
 
