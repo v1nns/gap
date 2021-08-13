@@ -21,7 +21,9 @@ cd gap
 # Install dependencies
 npm install
 
-# Before running script, must modify 'config.json' to insert PUBG API* key
+# Before running script, there are two things to do before executing it:
+# 1. must modify 'config.json' to insert PUBG API* key
+# 2. replace 'const names' with the nickname of each player from your team
 node index.js
 ```
 
