@@ -13,6 +13,6 @@
   "author": "Vinicius M. Longaray",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.0"
+    "axios": "^1.8.2"
   }
 }
